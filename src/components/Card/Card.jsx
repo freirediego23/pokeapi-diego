@@ -1,6 +1,7 @@
 import "./Card.css";
 
 function Card({ data }) {
+  console.log(data);
   return (
     <section>
       <div>
@@ -9,8 +10,8 @@ function Card({ data }) {
       <table>
         <thead>
           <tr>
-            <th>Propiedad</th>
-            <th>Valor</th>
+            <th>Datos</th>
+            <th>Valores</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +24,10 @@ function Card({ data }) {
             <td>{data.name}</td>
           </tr>
           <tr>
+            <td>Tipo</td>
+            <td>{data.types[0].type.name}</td>
+          </tr>
+          <tr>
             <td>Altura</td>
             <td>{data.height}</td>
           </tr>
@@ -33,6 +38,17 @@ function Card({ data }) {
           <tr>
             <td>Experiencia base</td>
             <td>{data.base_experience}</td>
+          </tr>
+          <tr>
+            <td>
+              {" "}
+              <b>Poderes:</b>
+            </td>
+            <td>
+              {data.moves[0].move.name}, {data.moves[1].move.name},{" "}
+              {data.moves[2].move.name}, {data.moves[3].move.name},{" "}
+              {data.moves[4].move.name}
+            </td>
           </tr>
         </tbody>
       </table>

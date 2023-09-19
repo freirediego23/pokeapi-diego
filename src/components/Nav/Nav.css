@@ -42,3 +42,16 @@ nav > div {
   padding: 8px 20px;
   cursor: pointer;
 }
+
+.pokelogo {
+  height: 200px;
+  border-radius: 50%;
+}
+
+label {
+}
+
+button,
+input {
+  padding: 5px 5px 5px 5px;
+}
