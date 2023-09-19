@@ -6,21 +6,15 @@ function usePokemon() {
   const [all, setAll] = useState(null);
   const [filtered, setFiltered] = useState([]);
 
-  const getData = async (url, setDatos, setDatosTwo = null) => {
+  const getData = async (url, setDatos) => {
     const res = await fetch(url);
     const datos = await res.json();
 
     setDatos(datos);
-
-    // setDatosTwo && setDatosTwo(datos.results);
   };
 
   useEffect(() => {
-    getData(
-      "https://pokeapi.co/api/v2/pokemon?limit=100000",
-      setAll
-      // setFiltered
-    );
+    getData("https://pokeapi.co/api/v2/pokemon?limit=100000", setAll);
   }, []);
 
   useEffect(() => {
@@ -36,6 +30,7 @@ function usePokemon() {
   const handleClick = (e) => {
     const pokeName = e.target.value;
     setPokemon(pokeName);
+    setFiltered([])
   };
 
   const handleOnChange = (e) => {

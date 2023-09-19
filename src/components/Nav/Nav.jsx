@@ -16,7 +16,9 @@ function Nav({ fnSubmit, fnClick, fnOnChange, dataOptions }) {
           <input type="text" onChange={fnOnChange} />
           <ul>
             {dataOptions?.map((pokemon, i) => (
-              <li key={i}>{pokemon.name}</li>
+              <li key={i}>
+                <button value={pokemon.name} onClick={fnClick}>{pokemon.name}</button>
+              </li>
             ))}
           </ul>
         </div>

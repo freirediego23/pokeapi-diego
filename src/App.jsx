@@ -4,8 +4,7 @@ import Nav from "./components/Nav/Nav";
 import usePokemon from "./services/usePokemon";
 
 function App() {
-  const { data, all, filtered, handleClick, handleSubmit, handleOnChange } =
-    usePokemon();
+  const { data, filtered, handleClick, handleSubmit, handleOnChange } = usePokemon();
 
   return (
     <main>
